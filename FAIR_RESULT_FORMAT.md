@@ -164,8 +164,4 @@ not something ORA owns or guarantees the shape of, and should not be depended on
 
 - [FAIR_CHAMPION_OVERVIEW.md](FAIR_CHAMPION_OVERVIEW.md) — narrative guide to the full pipeline,
   including how ORA stores and retrieves results and displays the FAIR score widget.
-- [FAIR_CHAMPION_INTEGRATION.md](FAIR_CHAMPION_INTEGRATION.md) — code-level implementation
-  reference for the full integration.
-- [FAIR_CHAMPION_RELEASE_MANAGEMENT.md](FAIR_CHAMPION_RELEASE_MANAGEMENT.md) — cross-partner
-  change-management agreement, including the formal backwards-compatibility commitment for this
-  format.
+
