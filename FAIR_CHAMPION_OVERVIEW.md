@@ -17,7 +17,6 @@
 9. [Displaying the results (the FAIR score widget)](#9-displaying-the-results-the-fair-score-widget)
 10. [Batch Processing](#10-batch-processing)
 11. [Configuration Reference](#11-configuration-reference)
-12. [UUID Formats](#12-uuid-formats)
 
 ---
 
@@ -335,29 +334,3 @@ All settings live in `config/fair_champion.yml`, environment-specific.
 The initializer at `config/initializers/fair_champion.rb` loads the `Fair` module at application
 boot, making all components available throughout the application.
 
----
-
-## 12. UUID Formats
-
-ORA uses two UUID formats, and understanding which is used where is essential:
-
-| Context | Format | Example |
-|---|---|---|
-| ORA4 database (Fedora/Solr) | `uuid_` prefix | `uuid_d5b64ac3-705f-4fc9-a828-652f83e3fac9` |
-| Public URLs and FAIR Champion API | `uuid:` prefix | `uuid:d5b64ac3-705f-4fc9-a828-652f83e3fac9` |
-| JSONL log `uuid` field | `uuid_` prefix | Always stored internally |
-| JSONL log `testedguid` field | `uuid:` in URL | The public URL that was tested |
-
-All services accept **either** format as input and normalise internally. The log always stores
-the internal format. The public URL is always constructed using the public format. When
-searching logs, both formats are checked to handle any historical edge cases.
-
-For the full UUID conversion functions and normalization logic, see the
-[Integration Document — UUID Format Mapping](FAIR_CHAMPION_INTEGRATION.md#3-uuid-format-mapping).
-
----
-
-**Document Version:** 1.1
-**Last Updated:** 2026-07-29
-**Status:** Current
-**Related:** [FAIR_CHAMPION_INTEGRATION.md](FAIR_CHAMPION_INTEGRATION.md) — code-level implementation reference
